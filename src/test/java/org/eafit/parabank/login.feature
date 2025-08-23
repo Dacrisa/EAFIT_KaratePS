@@ -16,7 +16,7 @@ Feature: Login to Parabank
     {
        "id": '#number',
        "firstName": '#string',
-       "lastName.": '#string',
+       "lastName": '#string',
        "address": {
             "street": '#string',
             "city": '#string',
@@ -28,3 +28,10 @@ Feature: Login to Parabank
     }
     """
     And match responseHeaders['CF-RAY'][0] != null
+
+      Scenario: Customer Login failed
+    Given path 'login'
+    And path 'dani45' //userName
+    And path 'dani.' //password
+    When method GET
+    Then status 400
