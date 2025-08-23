@@ -6,7 +6,7 @@ Feature: TranferFunds to Parabank
     * header Accept = 'application/json'
     * def accountFrom = 26331
     * def accountto = 34212
-    * def amount = 10000
+    * def amount = 10001
 
    Scenario: Customer TransferFunds
       Given path 'transfer'
