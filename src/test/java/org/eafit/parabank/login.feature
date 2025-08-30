@@ -15,16 +15,16 @@ Feature: Login to Parabank
     """
     {
        "id": '#number',
-       "firstName": '#string',
-       "lastName": '#string',
+       "firstName": 'firstName',
+       "lastName": 'lastName',
        "address": {
-            "street": '#string',
-            "city": '#string',
-            "state": '#string',
-            "zipCode": '#string'
+            "street": 'street',
+            "city": 'city',
+            "state": 'state',
+            "zipCode": 'zipCode'
         },
-       "phoneNumber": '#string',
-       "ssn": '#string'
+       "phoneNumber": 'phoneNumber',
+       "ssn": 'ssn'
     }
     """
     And match responseHeaders['CF-RAY'][0] != null
@@ -32,7 +32,7 @@ Feature: Login to Parabank
       Scenario: Customer Login failed
     Given path 'login'
     And path 'dani' //userName
-    And path 'dani.' //password
+    And path 'dani' //password
     When method GET
     Then status 400
     And match response contains 'Invalid username and or password'
