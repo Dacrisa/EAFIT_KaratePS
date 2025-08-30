@@ -31,7 +31,7 @@ Feature: Login to Parabank
 
       Scenario: Customer Login failed
     Given path 'login'
-    And path 'dani45' //userName
+    And path 'dani' //userName
     And path 'dani.' //password
     When method GET
     Then status 400
